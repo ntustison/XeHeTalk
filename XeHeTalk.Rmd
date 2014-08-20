@@ -1,0 +1,165 @@
+---
+title: "Xe/He comparison"
+author: Nick Tustison
+date: August 21, 2014
+output:
+  revealjs_presentation:
+    pandoc_args: [ "--slide-level", "2" ]
+    incremental: false
+    widescreen: false
+    smaller: true
+    theme: night
+    transition: fade
+    highlight: pygments
+    center: true
+    self_contained: false
+---
+
+# Ventilation segmentation
+
+## Background
+
+- no image registration was used for these results
+- Ben and Alicia provided lung masks (Ben was the default)
+- Redid the analysis for all subjects on August 19 to take advantage of accumulated updates to analysis pipeline
+
+## Analysis pipeline
+![](./figures/ventilationSegmentation.png)
+
+## Total volumes
+
+Volume of Ben's (or Alicia's) mask in $mm^3$
+
+```{r,results = 'asis', echo = FALSE}
+results <- read.csv( "./data/resultsNew.csv" )
+results <- results[,c(1,2,5)];
+pandoc.table( results, style = "rmarkdown", split.tables = Inf )
+```
+
+## Defect volume ratio
+Defect volume ratio = green region in 2-class segmentation / total volume
+```{r,results = 'asis', echo = FALSE}
+results <- read.csv( "./data/resultsNew.csv" )
+pandoc.table( results[,c(1,3,6)], style = "rmarkdown", split.tables = Inf )
+ttest <- t.test( results[,3], results[,6], paired = TRUE, alternative = "two.sided" )
+cat( "p-value = ", ttest$p.value, "\n", sep = '' )
+cat( "\n mean of the differences = ", ttest$estimate, "\n", sep = '' )
+```
+
+## Expected ventilation
+Expected ventilation = $f$(probabilities of all 4 segmentation classes)
+(How well is the lung ventilated?  1 = not well ventilated ... 4 = well-ventilated)
+```{r,results = 'asis', echo = FALSE}
+results <- read.csv( "./data/resultsNew.csv" )
+pandoc.table( results[,c(1,4,7)], style = "rmarkdown", split.tables = Inf )
+ttest <- t.test( results[,4], results[,7], paired = TRUE, alternative = "two.sided" )
+cat( "p-value = ", ttest$p.value, "\n", sep = '' )
+cat( "\n mean of the differences = ", ttest$estimate, "\n", sep = '' )
+```
+
+# Individual subject images
+
+## Background
+
+- For each subject, we registered the Xenon image to its Helium counterpart
+- That transform, $\mathcal{T}$, was used to warp the Xenon expected ventilation (EV) image
+- The difference image was calculated: $(He_{EV} - \mathcal{T}(Xe_{EV}))$
+
+## Guide for the following images:
+
+- First slide for each subject is the bias corrected + segmentation images
+- Helium on top, Xenon (warped to Helium) on bottom
+- Second slice for each subject are the following images:
+   - Bias corrected Helium image
+   - Bias corrected, transformed Xenon image
+   - Christmas tree maps from the difference image:  $(He_{EV} - \mathcal{T}(Xe_{EV}))$
+
+## He-Xe_01_Xe
+![](figures/He-Xe_01_Xe_tiled.png)
+
+## He-Xe_01_Xe
+![](figures/He-Xe_01_Xe_tiledxmas.png)
+
+## He-Xe_03_Xe_0206
+![](figures/He-Xe_03__Xe_0206_tiled.png)
+
+## He-Xe_03_Xe_0206
+![](figures/He-Xe_03__Xe_0206_tiledxmas.png)
+
+## He-Xe_04_Xe_0213
+![](figures/He-Xe_04__Xe_0213_tiled.png)
+
+## He-Xe_04_Xe_0213
+![](figures/He-Xe_04__Xe_0213_tiledxmas.png)
+
+## He-Xe_05_Xe_0217
+![](figures/He-Xe_05__Xe_0217_tiled.png)
+
+## He-Xe_05_Xe_0217
+![](figures/He-Xe_05__Xe_0217_tiledxmas.png)
+
+## He-Xe_06_Xe0219
+![](figures/He-Xe_06__Xe0219_tiled.png)
+
+## He-Xe_06_Xe0219
+![](figures/He-Xe_06__Xe0219_tiledxmas.png)
+
+## He-Xe_07_Xe_0220
+![](figures/He-Xe_07__Xe_0220_tiled.png)
+
+## He-Xe_07_Xe_0220
+![](figures/He-Xe_07__Xe_0220_tiledxmas.png)
+
+## He_Xe_01_Xe_0242
+![](figures/He_Xe_01__Xe_0242_tiled.png)
+
+## He_Xe_01_Xe_0242
+![](figures/He_Xe_01__Xe_0242_tiledxmas.png)
+
+## He_Xe_09_Xe_0227
+![](figures/He_Xe_09__Xe_0227_tiled.png)
+
+## He_Xe_09_Xe_0227
+![](figures/He_Xe_09__Xe_0227_tiledxmas.png)
+
+## He_Xe_10_Xe_0236
+![](figures/He_Xe_10__Xe_0236_tiled.png)
+
+## He_Xe_10_Xe_0236
+![](figures/He_Xe_10__Xe_0236_tiledxmas.png)
+
+## He_Xe_11_Xe_0238
+![](figures/He_Xe_11__Xe_0238_tiled.png)
+
+## He_Xe_11_Xe_0238
+![](figures/He_Xe_11__Xe_0238_tiledxmas.png)
+
+## He_Xe_12_Xe_0244
+![](figures/He_Xe_12__Xe_0244_tiled.png)
+
+## He_Xe_12_Xe_0244
+![](figures/He_Xe_12__Xe_0244_tiledxmas.png)
+
+## Xe\#390
+![](figures/Xe#390_tiled.png)
+
+## Xe\#390
+![](figures/Xe#390_tiledxmas.png)
+
+## Xe\#392
+![](figures/Xe#392_tiled.png)
+
+## Xe\#392
+![](figures/Xe#392_tiledxmas.png)
+
+## Xe\#394
+![](figures/Xe#394_tiled.png)
+
+## Xe\#394
+![](figures/Xe#394_tiledxmas.png)
+
+## Xe\#402
+![](figures/Xe#402_tiled.png)
+
+## Xe\#402
+![](figures/Xe#402_tiledxmas.png)

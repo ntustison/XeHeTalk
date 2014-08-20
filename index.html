@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Nick Tustison" />
+  <meta name="dcterms.date" content="2014-08-21" />
+  <title>Xe/He comparison</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="index_files/reveal.js-2.6.1/css/reveal.min.css"/>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+
+<link rel="stylesheet" href="index_files/reveal.js-2.6.1/css/theme/night.css" id="theme">
+
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
+
+<link rel="stylesheet" media="print" href="index_files/reveal.js-2.6.1/css/print/pdf.css" />
+
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Xe/He comparison</h1>
+    <h2 class="author">Nick Tustison</h2>
+    <h3 class="date">August 21, 2014</h3>
+</section>
+
+<section><section id="ventilation-segmentation" class="titleslide slide level1"><h1>Ventilation segmentation</h1></section><section id="background" class="slide level2">
+<h1>Background</h1>
+<ul>
+<li>no image registration was used for these results</li>
+<li>Ben and Alicia provided lung masks (Ben was the default)</li>
+<li>Redid the analysis for all subjects on August 19 to take advantage of accumulated updates to analysis pipeline</li>
+</ul>
+</section><section id="analysis-pipeline" class="slide level2">
+<h1>Analysis pipeline</h1>
+<p><img src="figures/ventilationSegmentation.png" /></p>
+</section><section id="total-volumes" class="slide level2">
+<h1>Total volumes</h1>
+<p>Volume of Ben’s (or Alicia’s) mask in <span class="math">\(mm^3\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">XenonAcquisitionId</th>
+<th style="text-align: center;">XeTotalVolume</th>
+<th style="text-align: center;">HeTotalVolume</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-01-Xe</td>
+<td style="text-align: center;">6550800</td>
+<td style="text-align: center;">6481200</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-03-Xe-0206</td>
+<td style="text-align: center;">4798380</td>
+<td style="text-align: center;">3974160</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-04-Xe-0213</td>
+<td style="text-align: center;">6405540</td>
+<td style="text-align: center;">6014580</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-05-Xe-0217</td>
+<td style="text-align: center;">4666800</td>
+<td style="text-align: center;">5004840</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-06-Xe0219</td>
+<td style="text-align: center;">4973280</td>
+<td style="text-align: center;">5755740</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-07-Xe-0220</td>
+<td style="text-align: center;">4567260</td>
+<td style="text-align: center;">4093440</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-01-Xe-0242</td>
+<td style="text-align: center;">6688200</td>
+<td style="text-align: center;">5919840</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-09-Xe-0227</td>
+<td style="text-align: center;">4377600</td>
+<td style="text-align: center;">4584600</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-10-Xe-0236</td>
+<td style="text-align: center;">4486980</td>
+<td style="text-align: center;">5236080</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-11-Xe-0238</td>
+<td style="text-align: center;">4941360</td>
+<td style="text-align: center;">5453880</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-12-Xe-0244</td>
+<td style="text-align: center;">3736740</td>
+<td style="text-align: center;">3624960</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Subject1/Xe#390</td>
+<td style="text-align: center;">4811520</td>
+<td style="text-align: center;">5385300</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Subject2/Xe#392</td>
+<td style="text-align: center;">3659520</td>
+<td style="text-align: center;">3698400</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Subject3/Xe#394</td>
+<td style="text-align: center;">4808940</td>
+<td style="text-align: center;">4949220</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Subject4/Xe#402</td>
+<td style="text-align: center;">4805040</td>
+<td style="text-align: center;">4925400</td>
+</tr>
+</tbody>
+</table>
+</section><section id="defect-volume-ratio" class="slide level2">
+<h1>Defect volume ratio</h1>
+<p>Defect volume ratio = green region in 2-class segmentation / total volume</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">XenonAcquisitionId</th>
+<th style="text-align: center;">XeDefectVolumeRatio</th>
+<th style="text-align: center;">HeDefectVolumeRatio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-01-Xe</td>
+<td style="text-align: center;">0.4212</td>
+<td style="text-align: center;">0.335</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-03-Xe-0206</td>
+<td style="text-align: center;">0.255</td>
+<td style="text-align: center;">0.2503</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-04-Xe-0213</td>
+<td style="text-align: center;">0.4038</td>
+<td style="text-align: center;">0.4725</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-05-Xe-0217</td>
+<td style="text-align: center;">0.3587</td>
+<td style="text-align: center;">0.3749</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-06-Xe0219</td>
+<td style="text-align: center;">0.6182</td>
+<td style="text-align: center;">0.486</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-07-Xe-0220</td>
+<td style="text-align: center;">0.3785</td>
+<td style="text-align: center;">0.311</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-01-Xe-0242</td>
+<td style="text-align: center;">0.3889</td>
+<td style="text-align: center;">0.3967</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-09-Xe-0227</td>
+<td style="text-align: center;">0.5529</td>
+<td style="text-align: center;">0.4571</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-10-Xe-0236</td>
+<td style="text-align: center;">0.5673</td>
+<td style="text-align: center;">0.4025</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-11-Xe-0238</td>
+<td style="text-align: center;">0.4293</td>
+<td style="text-align: center;">0.4021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-12-Xe-0244</td>
+<td style="text-align: center;">0.6656</td>
+<td style="text-align: center;">0.5478</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Subject1/Xe#390</td>
+<td style="text-align: center;">0.4008</td>
+<td style="text-align: center;">0.3085</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Subject2/Xe#392</td>
+<td style="text-align: center;">0.3062</td>
+<td style="text-align: center;">0.2914</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Subject3/Xe#394</td>
+<td style="text-align: center;">0.279</td>
+<td style="text-align: center;">0.2685</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Subject4/Xe#402</td>
+<td style="text-align: center;">0.3753</td>
+<td style="text-align: center;">0.3837</td>
+</tr>
+</tbody>
+</table>
+<p>p-value = 0.0142</p>
+<p>mean of the differences = 0.04752</p>
+</section><section id="expected-ventilation" class="slide level2">
+<h1>Expected ventilation</h1>
+<p>Expected ventilation = <span class="math">\(f\)</span>(probabilities of all 4 segmentation classes) (How well is the lung ventilated? 1 = not well ventilated … 4 = well-ventilated)</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">XenonAcquisitionId</th>
+<th style="text-align: center;">XeExpectedVentilation</th>
+<th style="text-align: center;">HeExpectedVentilation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-01-Xe</td>
+<td style="text-align: center;">2.857</td>
+<td style="text-align: center;">3.029</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-03-Xe-0206</td>
+<td style="text-align: center;">3.262</td>
+<td style="text-align: center;">3.268</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-04-Xe-0213</td>
+<td style="text-align: center;">2.858</td>
+<td style="text-align: center;">2.715</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-05-Xe-0217</td>
+<td style="text-align: center;">2.889</td>
+<td style="text-align: center;">2.932</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-06-Xe0219</td>
+<td style="text-align: center;">2.245</td>
+<td style="text-align: center;">2.629</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-07-Xe-0220</td>
+<td style="text-align: center;">2.919</td>
+<td style="text-align: center;">3.089</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-01-Xe-0242</td>
+<td style="text-align: center;">2.859</td>
+<td style="text-align: center;">2.871</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-09-Xe-0227</td>
+<td style="text-align: center;">2.53</td>
+<td style="text-align: center;">2.756</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-10-Xe-0236</td>
+<td style="text-align: center;">2.51</td>
+<td style="text-align: center;">2.872</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">He-Xe-11-Xe-0238</td>
+<td style="text-align: center;">2.779</td>
+<td style="text-align: center;">2.877</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">He-Xe-12-Xe-0244</td>
+<td style="text-align: center;">2.23</td>
+<td style="text-align: center;">2.494</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Subject1/Xe#390</td>
+<td style="text-align: center;">2.84</td>
+<td style="text-align: center;">3.062</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Subject2/Xe#392</td>
+<td style="text-align: center;">3.069</td>
+<td style="text-align: center;">3.109</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Subject3/Xe#394</td>
+<td style="text-align: center;">3.092</td>
+<td style="text-align: center;">3.129</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Subject4/Xe#402</td>
+<td style="text-align: center;">2.895</td>
+<td style="text-align: center;">2.912</td>
+</tr>
+</tbody>
+</table>
+<p>p-value = 0.004497</p>
+<p>mean of the differences = -0.1274</p>
+</section></section>
+<section><section id="individual-subject-images" class="titleslide slide level1"><h1>Individual subject images</h1></section><section id="background-1" class="slide level2">
+<h1>Background</h1>
+<ul>
+<li>For each subject, we registered the Xenon image to its Helium counterpart</li>
+<li>That transform, <span class="math">\(\mathcal{T}\)</span>, was used to warp the Xenon expected ventilation (EV) image</li>
+<li>The difference image was calculated: <span class="math">\((He_{EV} - \mathcal{T}(Xe_{EV}))\)</span></li>
+</ul>
+</section><section id="guide-for-the-following-images" class="slide level2">
+<h1>Guide for the following images:</h1>
+<ul>
+<li>First slide for each subject is the bias corrected + segmentation images</li>
+<li>Helium on top, Xenon (warped to Helium) on bottom</li>
+<li>Second slice for each subject are the following images:</li>
+<li>Bias corrected Helium image</li>
+<li>Bias corrected, transformed Xenon image</li>
+<li>Christmas tree maps from the difference image: <span class="math">\((He_{EV} - \mathcal{T}(Xe_{EV}))\)</span></li>
+</ul>
+</section><section id="he-xe_01_xe" class="slide level2">
+<h1>He-Xe_01_Xe</h1>
+<p><img src="figures/He-Xe_01_Xe_tiled.png" /></p>
+</section><section id="he-xe_01_xe-1" class="slide level2">
+<h1>He-Xe_01_Xe</h1>
+<p><img src="figures/He-Xe_01_Xe_tiledxmas.png" /></p>
+</section><section id="he-xe_03_xe_0206" class="slide level2">
+<h1>He-Xe_03_Xe_0206</h1>
+<p><img src="figures/He-Xe_03__Xe_0206_tiled.png" /></p>
+</section><section id="he-xe_03_xe_0206-1" class="slide level2">
+<h1>He-Xe_03_Xe_0206</h1>
+<p><img src="figures/He-Xe_03__Xe_0206_tiledxmas.png" /></p>
+</section><section id="he-xe_04_xe_0213" class="slide level2">
+<h1>He-Xe_04_Xe_0213</h1>
+<p><img src="figures/He-Xe_04__Xe_0213_tiled.png" /></p>
+</section><section id="he-xe_04_xe_0213-1" class="slide level2">
+<h1>He-Xe_04_Xe_0213</h1>
+<p><img src="figures/He-Xe_04__Xe_0213_tiledxmas.png" /></p>
+</section><section id="he-xe_05_xe_0217" class="slide level2">
+<h1>He-Xe_05_Xe_0217</h1>
+<p><img src="figures/He-Xe_05__Xe_0217_tiled.png" /></p>
+</section><section id="he-xe_05_xe_0217-1" class="slide level2">
+<h1>He-Xe_05_Xe_0217</h1>
+<p><img src="figures/He-Xe_05__Xe_0217_tiledxmas.png" /></p>
+</section><section id="he-xe_06_xe0219" class="slide level2">
+<h1>He-Xe_06_Xe0219</h1>
+<p><img src="figures/He-Xe_06__Xe0219_tiled.png" /></p>
+</section><section id="he-xe_06_xe0219-1" class="slide level2">
+<h1>He-Xe_06_Xe0219</h1>
+<p><img src="figures/He-Xe_06__Xe0219_tiledxmas.png" /></p>
+</section><section id="he-xe_07_xe_0220" class="slide level2">
+<h1>He-Xe_07_Xe_0220</h1>
+<p><img src="figures/He-Xe_07__Xe_0220_tiled.png" /></p>
+</section><section id="he-xe_07_xe_0220-1" class="slide level2">
+<h1>He-Xe_07_Xe_0220</h1>
+<p><img src="figures/He-Xe_07__Xe_0220_tiledxmas.png" /></p>
+</section><section id="he_xe_01_xe_0242" class="slide level2">
+<h1>He_Xe_01_Xe_0242</h1>
+<p><img src="figures/He_Xe_01__Xe_0242_tiled.png" /></p>
+</section><section id="he_xe_01_xe_0242-1" class="slide level2">
+<h1>He_Xe_01_Xe_0242</h1>
+<p><img src="figures/He_Xe_01__Xe_0242_tiledxmas.png" /></p>
+</section><section id="he_xe_09_xe_0227" class="slide level2">
+<h1>He_Xe_09_Xe_0227</h1>
+<p><img src="figures/He_Xe_09__Xe_0227_tiled.png" /></p>
+</section><section id="he_xe_09_xe_0227-1" class="slide level2">
+<h1>He_Xe_09_Xe_0227</h1>
+<p><img src="figures/He_Xe_09__Xe_0227_tiledxmas.png" /></p>
+</section><section id="he_xe_10_xe_0236" class="slide level2">
+<h1>He_Xe_10_Xe_0236</h1>
+<p><img src="figures/He_Xe_10__Xe_0236_tiled.png" /></p>
+</section><section id="he_xe_10_xe_0236-1" class="slide level2">
+<h1>He_Xe_10_Xe_0236</h1>
+<p><img src="figures/He_Xe_10__Xe_0236_tiledxmas.png" /></p>
+</section><section id="he_xe_11_xe_0238" class="slide level2">
+<h1>He_Xe_11_Xe_0238</h1>
+<p><img src="figures/He_Xe_11__Xe_0238_tiled.png" /></p>
+</section><section id="he_xe_11_xe_0238-1" class="slide level2">
+<h1>He_Xe_11_Xe_0238</h1>
+<p><img src="figures/He_Xe_11__Xe_0238_tiledxmas.png" /></p>
+</section><section id="he_xe_12_xe_0244" class="slide level2">
+<h1>He_Xe_12_Xe_0244</h1>
+<p><img src="figures/He_Xe_12__Xe_0244_tiled.png" /></p>
+</section><section id="he_xe_12_xe_0244-1" class="slide level2">
+<h1>He_Xe_12_Xe_0244</h1>
+<p><img src="figures/He_Xe_12__Xe_0244_tiledxmas.png" /></p>
+</section><section id="xe390" class="slide level2">
+<h1>Xe#390</h1>
+<p><img src="figures/Xe%23390_tiled.png" /></p>
+</section><section id="xe390-1" class="slide level2">
+<h1>Xe#390</h1>
+<p><img src="figures/Xe%23390_tiledxmas.png" /></p>
+</section><section id="xe392" class="slide level2">
+<h1>Xe#392</h1>
+<p><img src="figures/Xe%23392_tiled.png" /></p>
+</section><section id="xe392-1" class="slide level2">
+<h1>Xe#392</h1>
+<p><img src="figures/Xe%23392_tiledxmas.png" /></p>
+</section><section id="xe394" class="slide level2">
+<h1>Xe#394</h1>
+<p><img src="figures/Xe%23394_tiled.png" /></p>
+</section><section id="xe394-1" class="slide level2">
+<h1>Xe#394</h1>
+<p><img src="figures/Xe%23394_tiledxmas.png" /></p>
+</section><section id="xe402" class="slide level2">
+<h1>Xe#402</h1>
+<p><img src="figures/Xe%23402_tiled.png" /></p>
+</section><section id="xe402-1" class="slide level2">
+<h1>Xe#402</h1>
+<p><img src="figures/Xe%23402_tiledxmas.png" /></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="index_files/reveal.js-2.6.1/lib/js/head.min.js"></script>
+  <script src="index_files/reveal.js-2.6.1/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'fade',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: []});
+    </script>
+
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+  </body>
+</html>
