@@ -15,6 +15,12 @@ output:
     self_contained: false
 ---
 
+## "Hello" from sunny California
+
+![](./figures/backyard2.jpg)
+
+
+
 # Ventilation segmentation
 
 ## Background
@@ -24,6 +30,7 @@ output:
 - Redid the analysis for all subjects on August 19 to take advantage of accumulated updates to analysis pipeline
 
 ## Analysis pipeline
+
 ![](./figures/ventilationSegmentation.png)
 
 ## Total volumes
@@ -61,18 +68,34 @@ cat( "\n mean of the differences = ", ttest$estimate, "\n", sep = '' )
 
 ## Background
 
-- For each subject, we registered the Xenon image to its Helium counterpart
-- That transform, $\mathcal{T}$, was used to warp the Xenon expected ventilation (EV) image
-- The difference image was calculated: $(He_{EV} - \mathcal{T}(Xe_{EV}))$
+- For each subject, we registered the Xenon image to its Helium counterpart.
+- That transform, $\mathcal{T}$, was used to warp the Xenon expected ventilation (EV) image to the space of the Helium image.
+- The difference image was calculated: $(He_{EV} - \mathcal{T}(Xe_{EV}))$.
 
-## Guide for the following images:
+## A couple additional notes:
 
-- First slide for each subject is the bias corrected + segmentation images
-- Helium on top, Xenon (warped to Helium) on bottom
+- Christmas tree maps require image registration (unlike the ventilation segmentation).
+- I would be inclined to avoid registration-based analyses for these data as the registration
+problem is ill-posed (don't worry, Tally, there are plenty of other data for which we can
+have Christmas tree maps such as Novartis):
+    * Only lung masks are used to register He/Xe pairs (_cannot_ use ventilation images).
+    * Lung masks do not provide internal anatomy (e.g., airways).
+    * Lung masks are of significantly poorer quality than we are using for other projects (using
+    H1 images and an automated segmentation protocol).
+- Hyper-intense spots cause segmentation problems (e.g., He-Xe_06_Xe0219, He_Xe_12_Xe_0244) so
+comparison is difficult.
+
+## Guide for the slides:
+
+- First slide for each subject is the bias corrected + segmentation images.
+- Each subject is identified by the Xe acquisition numbers although both Xe and He images are on each slide.
+- Helium on top, Xenon (warped to Helium) on bottom.
 - Second slice for each subject are the following images:
-   - Bias corrected Helium image
-   - Bias corrected, transformed Xenon image
-   - Christmas tree maps from the difference image:  $(He_{EV} - \mathcal{T}(Xe_{EV}))$
+    * Bias corrected Helium image.
+    * Bias corrected, transformed Xenon image.
+    * Christmas tree maps from the difference image after smoothing:  $(He_{EV} - \mathcal{T}(Xe_{EV}))$.
+
+
 
 ## He-Xe_01_Xe
 ![](figures/He-Xe_01_Xe_tiled.png)
@@ -101,8 +124,10 @@ cat( "\n mean of the differences = ", ttest$estimate, "\n", sep = '' )
 ## He-Xe_06_Xe0219
 ![](figures/He-Xe_06__Xe0219_tiled.png)
 
-## He-Xe_06_Xe0219
+## He-Xe_06_Xe0219$^*$
 ![](figures/He-Xe_06__Xe0219_tiledxmas.png)
+
+$^*$Bright spots cause large segmentation differences.
 
 ## He-Xe_07_Xe_0220
 ![](figures/He-Xe_07__Xe_0220_tiled.png)
@@ -134,11 +159,15 @@ cat( "\n mean of the differences = ", ttest$estimate, "\n", sep = '' )
 ## He_Xe_11_Xe_0238
 ![](figures/He_Xe_11__Xe_0238_tiledxmas.png)
 
-## He_Xe_12_Xe_0244
+## He_Xe_12_Xe_0244$^*$
 ![](figures/He_Xe_12__Xe_0244_tiled.png)
+
+$^*$Bright spots cause large segmentation differences.
 
 ## He_Xe_12_Xe_0244
 ![](figures/He_Xe_12__Xe_0244_tiledxmas.png)
+
+
 
 ## Xe\#390
 ![](figures/Xe#390_tiled.png)
@@ -163,3 +192,4 @@ cat( "\n mean of the differences = ", ttest$estimate, "\n", sep = '' )
 
 ## Xe\#402
 ![](figures/Xe#402_tiledxmas.png)
+

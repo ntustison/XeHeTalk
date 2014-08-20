@@ -79,6 +79,10 @@
     <h3 class="date">August 21, 2014</h3>
 </section>
 
+<section id="hello-from-sunny-california" class="slide level2">
+<h1>“Hello” from sunny California</h1>
+<p><img src="figures/backyard2.jpg" /></p>
+</section>
 <section><section id="ventilation-segmentation" class="titleslide slide level1"><h1>Ventilation segmentation</h1></section><section id="background" class="slide level2">
 <h1>Background</h1>
 <ul>
@@ -364,19 +368,34 @@
 <section><section id="individual-subject-images" class="titleslide slide level1"><h1>Individual subject images</h1></section><section id="background-1" class="slide level2">
 <h1>Background</h1>
 <ul>
-<li>For each subject, we registered the Xenon image to its Helium counterpart</li>
-<li>That transform, <span class="math">\(\mathcal{T}\)</span>, was used to warp the Xenon expected ventilation (EV) image</li>
-<li>The difference image was calculated: <span class="math">\((He_{EV} - \mathcal{T}(Xe_{EV}))\)</span></li>
+<li>For each subject, we registered the Xenon image to its Helium counterpart.</li>
+<li>That transform, <span class="math">\(\mathcal{T}\)</span>, was used to warp the Xenon expected ventilation (EV) image to the space of the Helium image.</li>
+<li>The difference image was calculated: <span class="math">\((He_{EV} - \mathcal{T}(Xe_{EV}))\)</span>.</li>
 </ul>
-</section><section id="guide-for-the-following-images" class="slide level2">
-<h1>Guide for the following images:</h1>
+</section><section id="a-couple-additional-notes" class="slide level2">
+<h1>A couple additional notes:</h1>
 <ul>
-<li>First slide for each subject is the bias corrected + segmentation images</li>
-<li>Helium on top, Xenon (warped to Helium) on bottom</li>
-<li>Second slice for each subject are the following images:</li>
-<li>Bias corrected Helium image</li>
-<li>Bias corrected, transformed Xenon image</li>
-<li>Christmas tree maps from the difference image: <span class="math">\((He_{EV} - \mathcal{T}(Xe_{EV}))\)</span></li>
+<li>Christmas tree maps require image registration (unlike the ventilation segmentation).</li>
+<li>I would be inclined to avoid registration-based analyses for these data as the registration problem is ill-posed (don’t worry, Tally, there are plenty of other data for which we can have Christmas tree maps such as Novartis):
+<ul>
+<li>Only lung masks are used to register He/Xe pairs (<em>cannot</em> use ventilation images).</li>
+<li>Lung masks do not provide internal anatomy (e.g., airways).</li>
+<li>Lung masks are of significantly poorer quality than we are using for other projects (using H1 images and an automated segmentation protocol).</li>
+</ul></li>
+<li>Hyper-intense spots cause segmentation problems (e.g., He-Xe_06_Xe0219, He_Xe_12_Xe_0244) so comparison is difficult.</li>
+</ul>
+</section><section id="guide-for-the-slides" class="slide level2">
+<h1>Guide for the slides:</h1>
+<ul>
+<li>First slide for each subject is the bias corrected + segmentation images.</li>
+<li>Each subject is identified by the Xe acquisition numbers although both Xe and He images are on each slide.</li>
+<li>Helium on top, Xenon (warped to Helium) on bottom.</li>
+<li>Second slice for each subject are the following images:
+<ul>
+<li>Bias corrected Helium image.</li>
+<li>Bias corrected, transformed Xenon image.</li>
+<li>Christmas tree maps from the difference image after smoothing: <span class="math">\((He_{EV} - \mathcal{T}(Xe_{EV}))\)</span>.</li>
+</ul></li>
 </ul>
 </section><section id="he-xe_01_xe" class="slide level2">
 <h1>He-Xe_01_Xe</h1>
@@ -406,8 +425,9 @@
 <h1>He-Xe_06_Xe0219</h1>
 <p><img src="figures/He-Xe_06__Xe0219_tiled.png" /></p>
 </section><section id="he-xe_06_xe0219-1" class="slide level2">
-<h1>He-Xe_06_Xe0219</h1>
+<h1>He-Xe_06_Xe0219<span class="math">\(^*\)</span></h1>
 <p><img src="figures/He-Xe_06__Xe0219_tiledxmas.png" /></p>
+<p><span class="math">\(^*\)</span>Bright spots cause large segmentation differences.</p>
 </section><section id="he-xe_07_xe_0220" class="slide level2">
 <h1>He-Xe_07_Xe_0220</h1>
 <p><img src="figures/He-Xe_07__Xe_0220_tiled.png" /></p>
@@ -439,8 +459,9 @@
 <h1>He_Xe_11_Xe_0238</h1>
 <p><img src="figures/He_Xe_11__Xe_0238_tiledxmas.png" /></p>
 </section><section id="he_xe_12_xe_0244" class="slide level2">
-<h1>He_Xe_12_Xe_0244</h1>
+<h1>He_Xe_12_Xe_0244<span class="math">\(^*\)</span></h1>
 <p><img src="figures/He_Xe_12__Xe_0244_tiled.png" /></p>
+<p><span class="math">\(^*\)</span>Bright spots cause large segmentation differences.</p>
 </section><section id="he_xe_12_xe_0244-1" class="slide level2">
 <h1>He_Xe_12_Xe_0244</h1>
 <p><img src="figures/He_Xe_12__Xe_0244_tiledxmas.png" /></p>
